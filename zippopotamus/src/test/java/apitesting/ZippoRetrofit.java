@@ -24,4 +24,17 @@ public class ZippoRetrofit extends ApiTestRetrofit {
             fail();
         }
     }
+
+
+    @Test
+    public void getBeverlyHills(){
+        try {
+            PostCodes zippo = getRetrofit().create(PostCodes.class);
+            Response<PostCodeResponse> response = zippo.get(90210).execute();
+            assertThat("HTTP code is OK", response.code(), is(200));
+        }catch (IOException e){
+            e.getStackTrace();
+            fail();
+        }
+    }
 }
