@@ -11,7 +11,7 @@ public class ApiTestRetrofit {
     private OkHttpClient client;
     private Retrofit retrofit;
 
-    @BeforeClass
+    @Before
     public void init(){
         client = new OkHttpClient.Builder().build();
 
