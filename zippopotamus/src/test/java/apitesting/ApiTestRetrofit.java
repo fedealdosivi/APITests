@@ -8,8 +8,8 @@ import retrofit2.converter.jackson.JacksonConverterFactory;
 
 public class ApiTestRetrofit {
 
-    protected OkHttpClient client;
-    protected Retrofit retrofit;
+    private OkHttpClient client;
+    private Retrofit retrofit;
 
     @BeforeClass
     public void init(){
@@ -21,6 +21,23 @@ public class ApiTestRetrofit {
                 .client(client)
                 .build();
     }
+
+    public OkHttpClient getClient() {
+        return client;
+    }
+
+    public void setClient(OkHttpClient client) {
+        this.client = client;
+    }
+
+    public Retrofit getRetrofit() {
+        return retrofit;
+    }
+
+    public void setRetrofit(Retrofit retrofit) {
+        this.retrofit = retrofit;
+    }
+
 
 
 }
