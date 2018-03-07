@@ -1,4 +1,4 @@
-package apitesting;
+package apitesting.Retrofit;
 
 import okhttp3.OkHttpClient;
 import org.junit.Before;

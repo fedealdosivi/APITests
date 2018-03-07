@@ -1,7 +1,6 @@
-package apitesting;
+package apitesting.Retrofit;
 
 import apitesting.Model.PostCodeResponse;
-import apitesting.Retrofit.PostCodes;
 import org.junit.Test;
 import retrofit2.Response;
 
