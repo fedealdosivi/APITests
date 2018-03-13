@@ -6,6 +6,7 @@ import org.junit.Test;
 
 import static io.restassured.RestAssured.expect;
 import static io.restassured.RestAssured.given;
+import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.hasSize;
 
@@ -21,30 +22,14 @@ public class SimpleTest {
         expect().statusCode(200).when().get("http://api.zippopotam.us/ar/7600");
     }
 
-
-
     @Test
-    public void test_NumberOfCircuitsFor2017Season_ShouldBe20() {
-        given().
-                when().
-                get("http://ergast.com/api/f1/2017/circuits.json").
-                then().
-                assertThat().
-                body("MRData.CircuitTable.Circuits.circuitId",hasSize(20));
+    public void TestPostCode(){
+        given().when().get("http://api.zippopotam.us/ar/7600").then()
+                .body(containsString("7600"));
     }
 
     @Test
-    public void test_ResponseHeaderData_ShouldBeCorrect() {
-
-        given().
-                when().
-                get("http://ergast.com/api/f1/2017/circuits.json").
-                then().
-                assertThat().
-                statusCode(200).
-                and().
-                contentType(ContentType.JSON).
-                and().
-                header("Content-Length",equalTo("4567"));
+    public void makeSureThatGoogleIsUp() {
+        given().when().get("http://www.google.com").then().statusCode(200);
     }
 }
